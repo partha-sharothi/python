@@ -102,7 +102,8 @@
 #         any_function()
 #         stop = time()
 #         print(stop-start, 'seconds')
-#         return any_function()
+#         return any_function
+
 #     return count_time()
 
 # @timer
@@ -111,3 +112,82 @@
 #     return
 
 # hello()
+
+# @timer
+# def another_function():
+#     for item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+#         print(item)
+#     return
+
+# another_function()
+
+
+##--------------------------  @classmethod  --------------------------------##
+
+
+
+# class MyClass:
+#     """Simple class to define something"""
+#     def __init__(self):
+#         pass
+
+#     def square(self, x):
+#         return x**2
+
+#     @classmethod
+#     def cube(self, x):
+#         return x**3
+
+# if __name__ == "__main__":
+#     myclass = MyClass()
+#     print(myclass.square(3))
+#     print(myclass.cube(3))
+#     print(MyClass.cube(3))
+#     print(MyClass.square(3))
+
+
+
+##--------------------------  @staticmethod  --------------------------------##
+
+
+# class MyClass:
+#     """simple class to define something"""
+
+#     def __init__(self):
+#         pass
+
+#     def square(self, x):
+#         return x**2
+
+#     @staticmethod
+#     def cube(x):
+#         return x**3
+
+
+# if __name__ == "__main__":
+#     myclass = MyClass()
+#     print(myclass.square(3))
+#     print(myclass.cube(3))
+#     print(MyClass.cube(3))
+#     print(MyClass.square(3))
+
+
+
+##--------------------------  @property  -------- we can use it as read only property or getter method ------------------------##
+
+
+class MyClass:
+    """simple class to define something"""
+
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+
+    @property
+    def full_name(self):
+        return self.first_name + ' ' + self.last_name
+
+if __name__ == "__main__":
+    myclass = MyClass('partha', 'sharothi')
+    print(myclass.full_name)
+    myclass.full_name = 'New Name'
